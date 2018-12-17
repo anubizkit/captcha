@@ -1,11 +1,11 @@
 package captcha
 
 import (
-
+	"strconv"
 )
 
 func Captcha(pettern int, left int, oper int, right int) string {
-	return "1 + "+IntToStr(right)
+	return strconv.Itoa(left) + " + " + IntToStr(right)
 }
 
 func IntToStr(num int) string {
