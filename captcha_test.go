@@ -12,3 +12,11 @@ func TestCase1111 (t *testing.T) {
 		t.Error("is should be "+expect)
 	}
 }
+
+func TestCase1112 (t *testing.T) {
+	result := captcha.Captcha(1,1,1,2)
+	expect := "1 + two"
+	if result != expect {
+		t.Error("is should be "+expect)
+	}
+}

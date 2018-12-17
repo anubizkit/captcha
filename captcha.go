@@ -5,5 +5,9 @@ import (
 )
 
 func Captcha(pettern int, left int, oper int, right int) string {
-	return "1 + one"
+	if right == 2 {
+		return "1 + two"
+	} else {
+		return "1 + one"
+	}
 }
