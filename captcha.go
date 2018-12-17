@@ -5,7 +5,7 @@ import (
 )
 
 func Captcha(pettern int, left int, oper int, right int) string {
-	return strconv.Itoa(left) + " + " + IntToStr(right)
+	return strconv.Itoa(left) + IntOperToStr(oper) + IntToStr(right)
 }
 
 func IntToStr(num int) string {
@@ -20,6 +20,15 @@ func IntToStr(num int) string {
 		case 7 : return "seven"
 		case 8 : return "eight"
 		case 9 : return "nine"
+	}
+	return ""
+}
+
+func IntOperToStr(num int) string {
+	switch num {
+		case 1 : return " + "
+		case 2 : return " - "
+		case 3 : return " x "
 	}
 	return ""
 }
