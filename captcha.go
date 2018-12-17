@@ -5,7 +5,11 @@ import (
 )
 
 func Captcha(pettern int, left int, oper int, right int) string {
-	return strconv.Itoa(left) + IntOperToStr(oper) + IntToStr(right)
+	if pettern == 1 {
+		return strconv.Itoa(left) + IntOperToStr(oper) + IntToStr(right)
+	} else {
+		return IntToStr(right) + IntOperToStr(oper) + strconv.Itoa(left)
+	}
 }
 
 func IntToStr(num int) string {
