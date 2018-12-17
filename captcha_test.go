@@ -52,3 +52,11 @@ func TestCase1929 (t *testing.T) {
 		t.Error("is should be "+expect)
 	}
 }
+
+func TestCase1939 (t *testing.T) {
+	result := captcha.Captcha(1,9,3,9)
+	expect := "9 x nine"
+	if result != expect {
+		t.Error("is should be "+expect)
+	}
+}
