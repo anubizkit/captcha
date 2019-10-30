@@ -5,34 +5,28 @@ import (
 )
 
 func Captcha(pettern int, left int, oper int, right int) string {
+
+	numstr := map[int]string{
+		0: "zero",
+		1: "one",
+		2: "two",
+		3: "three",
+		4: "four",
+		5: "five",
+		6: "six",
+		7: "seven",
+		8: "eight",
+		9: "nine",
+	}
+	operstr := map[int]string{
+		1: " + ",
+		2: " - ",
+		3: " x ",
+	}
+
 	if pettern == 1 {
-		return strconv.Itoa(left) + IntOperToStr(oper) + IntToStr(right)
+		return strconv.Itoa(left) + operstr[oper] + numstr[right]
 	} else {
-		return IntToStr(right) + IntOperToStr(oper) + strconv.Itoa(left)
+		return numstr[right] + operstr[oper] + strconv.Itoa(left)
 	}
-}
-
-func IntToStr(num int) string {
-	switch num {
-		case 0 : return "zero"
-		case 1 : return "one"
-		case 2 : return "two"
-		case 3 : return "three"
-		case 4 : return "four"
-		case 5 : return "five"
-		case 6 : return "six"
-		case 7 : return "seven"
-		case 8 : return "eight"
-		case 9 : return "nine"
-	}
-	return ""
-}
-
-func IntOperToStr(num int) string {
-	switch num {
-		case 1 : return " + "
-		case 2 : return " - "
-		case 3 : return " x "
-	}
-	return ""
 }
