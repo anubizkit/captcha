@@ -23,10 +23,10 @@ func Captcha(pettern int, left int, oper int, right int) string {
 		2: " - ",
 		3: " x ",
 	}
-
-	if pettern == 1 {
-		return strconv.Itoa(left) + operstr[oper] + numstr[right]
-	} else {
-		return numstr[right] + operstr[oper] + strconv.Itoa(left)
+	patternFunc := map[int]func(int, int, int) string{
+		0: func(left int, oper int, right int) string { return numstr[right] + operstr[oper] + strconv.Itoa(left) },
+		1: func(left int, oper int, right int) string { return strconv.Itoa(left) + operstr[oper] + numstr[right] },
 	}
+
+	return patternFunc[pettern](left, oper, right)
 }
